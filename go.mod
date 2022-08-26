@@ -2,8 +2,6 @@ module unisun/api/class-room-price-mapping-processor-listener
 
 go 1.18
 
-require github.com/dariubs/percent v1.0.0
-
 require (
 	github.com/fsnotify/fsnotify v1.5.4 // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
