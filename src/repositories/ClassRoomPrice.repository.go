@@ -26,7 +26,7 @@ func (srv *ClassRoomPriceRepositoriesAdapter) GetById(id int) *entitys.ClassRoom
 
 func (srv *ClassRoomPriceRepositoriesAdapter) GetByClassRoomId(id int) *entitys.ClassRoomPrice {
 	result := entitys.ClassRoomPrice{}
-	srv.Context.Find(&result, "classroomid = ?", id)
+	srv.Context.Find(&result, "class_room_id = ?", id)
 	return &result
 }
 

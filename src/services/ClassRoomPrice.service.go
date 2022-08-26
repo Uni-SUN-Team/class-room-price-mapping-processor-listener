@@ -16,7 +16,7 @@ func NewClassRoomPriceServiceAdapter(repo repository.ClassRoomPricePort) *ClassR
 }
 
 func (srv *ClassRoomPriceServiceAdapter) GetClassRoomPrice(id int) *models.ClassRoomPrice {
-	result := srv.Repo.GetById(id)
+	result := srv.Repo.GetByClassRoomId(id)
 	return &models.ClassRoomPrice{
 		Id:           result.Id,
 		ClassRoomId:  result.ClassRoomId,
