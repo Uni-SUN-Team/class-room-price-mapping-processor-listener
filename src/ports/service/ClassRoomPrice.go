@@ -1,11 +1,7 @@
 package service
 
-import classroomprice "unisun/api/class-room-price-mapping-processor-schedule/src/models/class-room-price"
+import "unisun/api/class-room-price-mapping-processor-listener/src/models"
 
-type ClassRoomPrice interface {
-	ManagePrice()
-}
-
-type ClassRoomPriceRepo interface {
-	GetClassRoomPrice(id int) *classroomprice.ClassRoomPriceEntity
+type ClassRoomPriceServicePort interface {
+	GetClassRoomPrice(id int) *models.ClassRoomPrice
 }

@@ -1,7 +1,7 @@
 app:
   env: "development"
   port: 8083
-  context_path: "/class-room-price-mapping-processor-schedule"
+  context_path: "/class-room-price-mapping-processor-listener"
   host: "localhost"
   root_path: "/api"
   version: 1.0
@@ -13,16 +13,6 @@ database:
   port: 5432
   ssl: disable
   timezone: Asia/Bangkok
-endpoint:
-  strapi-information-gateway:
-    host: "http://localhost:8080"
-    path: "/strapi-information-gateway/api/v1/strapi"
-  class_room:
-    path: /api/class-rooms
-    query: ?fields[0]=id&fields[1]=prices
-  promotion:
-    path: /api/promotions
-    query: ?populate[Group][populate]=*&populate[Discount][populate]=*
 GIN_MODE: "debug"
 cron:
   every: 1

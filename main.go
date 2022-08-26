@@ -2,9 +2,9 @@ package main
 
 import (
 	"log"
-	"unisun/api/class-room-price-mapping-processor-schedule/src"
-	config "unisun/api/class-room-price-mapping-processor-schedule/src/configs"
-	"unisun/api/class-room-price-mapping-processor-schedule/src/constants"
+	"unisun/api/class-room-price-mapping-processor-listener/src"
+	config "unisun/api/class-room-price-mapping-processor-listener/src/configs"
+	"unisun/api/class-room-price-mapping-processor-listener/src/constants"
 
 	"github.com/spf13/viper"
 )

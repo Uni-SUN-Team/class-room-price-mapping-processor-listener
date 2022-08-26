@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"unisun/api/class-room-price-mapping-processor-schedule/src/ports/controller"
+	"unisun/api/class-room-price-mapping-processor-listener/src/ports/controller"
 
 	"github.com/gin-gonic/gin"
 )

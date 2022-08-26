@@ -3,17 +3,17 @@ package controllers
 import (
 	"net/http"
 	"strconv"
-	classroomprice "unisun/api/class-room-price-mapping-processor-schedule/src/models/class-room-price"
-	"unisun/api/class-room-price-mapping-processor-schedule/src/ports/service"
+	"unisun/api/class-room-price-mapping-processor-listener/src/models"
+	"unisun/api/class-room-price-mapping-processor-listener/src/ports/service"
 
 	"github.com/gin-gonic/gin"
 )
 
 type ClassRoomPriceControllerAdapter struct {
-	ClassRoomPriceService service.ClassRoomPriceRepo
+	ClassRoomPriceService service.ClassRoomPriceServicePort
 }
 
-func NewClassRoomPriceControllerAdapter(classRoomPriceService service.ClassRoomPriceRepo) *ClassRoomPriceControllerAdapter {
+func NewClassRoomPriceControllerAdapter(classRoomPriceService service.ClassRoomPriceServicePort) *ClassRoomPriceControllerAdapter {
 	return &ClassRoomPriceControllerAdapter{
 		ClassRoomPriceService: classRoomPriceService,
 	}
@@ -31,10 +31,10 @@ func (srv *ClassRoomPriceControllerAdapter) GetClassRoomPriceById(c *gin.Context
 			Code:  http.StatusInternalServerError,
 		})
 	}
-	service := srv.ClassRoomPriceService.GetClassRoomPrice(id)
+	data := srv.ClassRoomPriceService.GetClassRoomPrice(id)
 	c.AbortWithStatusJSON(http.StatusOK, struct {
-		Data classroomprice.ClassRoomPriceEntity `json:"data"`
+		Data models.ClassRoomPrice `json:"data"`
 	}{
-		Data: *service,
+		Data: *data,
 	})
 }

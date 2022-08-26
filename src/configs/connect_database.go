@@ -3,8 +3,8 @@ package config
 import (
 	"log"
 	"strings"
-	"unisun/api/class-room-price-mapping-processor-schedule/src/constants"
-	"unisun/api/class-room-price-mapping-processor-schedule/src/entitys"
+	"unisun/api/class-room-price-mapping-processor-listener/src/constants"
+	"unisun/api/class-room-price-mapping-processor-listener/src/entitys"
 
 	"github.com/spf13/viper"
 	"gorm.io/driver/postgres"
@@ -30,7 +30,7 @@ func ConnectDatabase() {
 		log.Fatalln("Failed to connect to database!")
 	}
 
-	var ClassRoomPriceEntity entitys.ClassRoomPriceEntity
+	var ClassRoomPriceEntity entitys.ClassRoomPrice
 	database.AutoMigrate(&ClassRoomPriceEntity)
 	DB = database
 }

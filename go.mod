@@ -1,11 +1,10 @@
-module unisun/api/class-room-price-mapping-processor-schedule
+module unisun/api/class-room-price-mapping-processor-listener
 
 go 1.18
 
-require github.com/go-co-op/gocron v1.15.0
+require github.com/dariubs/percent v1.0.0
 
 require (
-	github.com/dariubs/percent v1.0.0 // indirect
 	github.com/fsnotify/fsnotify v1.5.4 // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
 	github.com/go-playground/locales v0.14.0 // indirect
@@ -50,10 +49,8 @@ require (
 
 require (
 	github.com/gin-gonic/gin v1.8.1
-	github.com/robfig/cron/v3 v3.0.1 // indirect
 	github.com/spf13/viper v1.12.0
 	github.com/stretchr/testify v1.8.0 // indirect
-	golang.org/x/sync v0.0.0-20220601150217-0de741cfad7f // indirect
 	gorm.io/driver/postgres v1.3.8
 	gorm.io/gorm v1.23.8
 )
